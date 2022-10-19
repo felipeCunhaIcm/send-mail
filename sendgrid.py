@@ -23,14 +23,14 @@ MAIL_CONTENT_MANAGER_NEW_COLABORATOR = """<head>
     <p>Mas não se preocupe, vamos enviar junto com as comunicações do Welcome essa informação para ela.</p>
     <p>
         Em caso de dúvidas ou problemas, entre em contato com o time SOS Field Services:<br>
-        E-mail: sos.fieldservices@stone.com.br<br>
-        Workplace: https://stone-co.workplace.com/groups/infrasos<br>
-        Slack: Canal <a href="https://stonepgto.slack.com/archives/CB7PA8KA9">#sos</a><br>
+        E-mail: sos.fieldservices@DOMAINr<br>
+        Workplace: LINK DO WORKPLACE<br>
+        Slack: Canal <a href="LINK DO CANAL">#sos</a><br>
     </p>
     <p>
         Telefones de contato:<br>
-        São Paulo: (11)3157-4141 e (11)3185-5170<br>
-        Rio de Janeiro: (21)2101-0483 e (21)2101-8358<br>
+        São Paulo: (11)PHONE e (11)PHONE<br>
+        Rio de Janeiro: (21)PHONE e (21)PHONE<br>
     </p>
 </body>"""
 
@@ -52,7 +52,7 @@ MAIL_CONTENT_NEW_COLABORATOR = """<head>
     <p>
         <b>Seu e-mail corporativo: </b>-fmail-<br>
     </p>
-    <p><b>Realize o procedimento (bit.ly/PassoaPasso_StoneCo) para criar sua senha e teste o seu login após a nossa live de Boas-vindas</b> e, se tiver dificuldade, responda ao formulário: bit.ly/AtendimentoSIR1</p>
+    <p><b>Realize o procedimento (bit.ly/PassoaPasso_Enterprise) para criar sua senha e teste o seu login após a nossa live de Boas-vindas</b> e, se tiver dificuldade, responda ao formulário: LINK</p>
     <p>Até logo!</p>
 </body>"""
 

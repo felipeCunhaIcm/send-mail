@@ -14,12 +14,12 @@ async def main():
     # Format IDM users dataframe
     corporate_mail = pd.read_csv(
         f"welcome/{welcome_date}/welcome_{welcome_date}_pmail.csv",
-        usecols=["fullName", "CPF", "mail", "mobile", "stoneStartDate"],
+        usecols=["fullName", "CPF", "mail", "mobile", "StartDate"],
         converters={"mobile": str}
     )
-    corporate_mail["stoneStartDate"] = pd.to_datetime(corporate_mail["stoneStartDate"])
-    corporate_mail["stoneStartDate"] = [row.replace(hour=10) for row in corporate_mail["stoneStartDate"]]
-    corporate_mail["stoneStartDate"] = corporate_mail["stoneStartDate"].astype(numpy.int64) // 10 ** 9
+    corporate_mail["StartDate"] = pd.to_datetime(corporate_mail["StartDate"])
+    corporate_mail["StartDate"] = [row.replace(hour=10) for row in corporate_mail["StartDate"]]
+    corporate_mail["StartDate"] = corporate_mail["StartDate"].astype(numpy.int64) // 10 ** 9
 
     # Format personal mail dataframe
     personal_mail = pd.read_excel(
@@ -43,7 +43,7 @@ async def main():
             "substitutions": {"-fmail-": mail, "-fmobile-": mobile}
         }
         for personal_mail, send_at, mail, mobile
-        in zip(new_people["personal_mail"], new_people["stoneStartDate"], new_people["mail"], new_people["mobile"])
+        in zip(new_people["personal_mail"], new_people["StartDate"], new_people["mail"], new_people["mobile"])
     ]
     personalization_batches = [personalizations[i:i + batch_len] for i in range(0, len(personalizations), batch_len)]
     print(sum(len(batch) for batch in personalization_batches))
@@ -55,7 +55,7 @@ async def main():
         responses = await gather(*[
             send_grid.send_mail(
                 session,
-                "educacao@stone.com.br",
+                "educacao@.com.br",
                 MAIL_SUBJECT_NEW_COLABORATOR,
                 [{"type": "text/html", "value": MAIL_CONTENT_NEW_COLABORATOR}],
                 data,

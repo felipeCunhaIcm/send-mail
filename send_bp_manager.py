@@ -37,13 +37,13 @@ async def main():
         {
             "to": [
                 {
-                    "email": mail_manager if mail_manager else "sos.acessos@stone.com.br",
+                    "email": mail_manager if mail_manager else "sos.acessos@.com.br",
                 },
                 {
-                    "email": mail_bp if mail_bp and mail_bp != mail_manager else "admissao@stone.com.br",
+                    "email": mail_bp if mail_bp and mail_bp != mail_manager else "admissao@.com.br",
                 },
             ],
-            "bcc": [{"email": "onboarding@stone.com.br"}],
+            "bcc": [{"email": "onboarding@.com.br"}],
             "substitutions": {"-fname-": name, "-fmail-": mail}
         }
         for name, mail, mail_manager, mail_bp
@@ -59,7 +59,7 @@ async def main():
         responses = await gather(*[
             send_grid.send_mail(
                 session,
-                "iam@stone.com.br",
+                "iam@.com.br",
                 MAIL_SUBJECT_MANAGER_NEW_COLABORATOR,
                 [{"type": "text/html", "value": MAIL_CONTENT_MANAGER_NEW_COLABORATOR}],
                 data,
